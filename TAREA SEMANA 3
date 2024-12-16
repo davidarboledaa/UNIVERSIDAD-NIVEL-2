@@ -1,0 +1,80 @@
+En este enfoque, vamos a definir funciones para ingresar las temperaturas y calcular el promedio semanal.
+# Función para ingresar las temperaturas diarias
+def ingresar_temperaturas():
+    temperaturas = []
+    for dia in range(7):
+        temperatura = float(input(f"Ingrese la temperatura del día {dia + 1}: "))
+        temperaturas.append(temperatura)
+    return temperaturas
+
+# Función para calcular el promedio semanal de temperaturas
+def calcular_promedio(temperaturas):
+    total = sum(temperaturas)
+    promedio = total / len(temperaturas)
+    return promedio
+
+# Función principal que organiza el flujo de la aplicación
+def main():
+    # Ingresar las temperaturas de la semana
+    temperaturas = ingresar_temperaturas()
+    
+    # Calcular el promedio semanal
+    promedio = calcular_promedio(temperaturas)
+    
+    # Mostrar el resultado
+    print(f"La temperatura promedio de la semana es: {promedio:.2f} grados Celsius.")
+
+# Llamar a la función principal
+if __name__ == "__main__":
+    main()
+Explicación:
+ingresar_temperaturas: Función que solicita las temperaturas de los 7 días de la semana y las guarda en una lista.
+calcular_promedio: Función que toma la lista de temperaturas, calcula la suma total y luego la divide entre el número de días (7) para obtener el promedio.
+main: Organiza el flujo de la aplicación, llamando a las funciones necesarias para ingresar datos y calcular el promedio.
+Programación Orientada a Objetos (POO).
+En este enfoque, vamos a definir una clase que encapsule la información y el comportamiento relacionado con las temperaturas diarias y su cálculo.
+# Definición de la clase Clima
+class Clima:
+    def __init__(self):
+        # Lista para almacenar las temperaturas de la semana
+        self.temperaturas = []
+    
+    # Método para ingresar las temperaturas diarias
+    def ingresar_temperaturas(self):
+        for dia in range(7):
+            temperatura = float(input(f"Ingrese la temperatura del día {dia + 1}: "))
+            self.temperaturas.append(temperatura)
+    
+    # Método para calcular el promedio semanal
+    def calcular_promedio(self):
+        total = sum(self.temperaturas)
+        promedio = total / len(self.temperaturas)
+        return promedio
+
+# Función principal que organiza el flujo de la aplicación
+def main():
+    # Crear un objeto de la clase Clima
+    clima = Clima()
+    
+    # Ingresar las temperaturas de la semana
+    clima.ingresar_temperaturas()
+    
+    # Calcular el promedio semanal
+    promedio = clima.calcular_promedio()
+    
+    # Mostrar el resultado
+    print(f"La temperatura promedio de la semana es: {promedio:.2f} grados Celsius.")
+
+# Llamar a la función principal
+if __name__ == "__main__":
+    main()
+Explicación:
+
+Clima: Clase que tiene una lista temperaturas para almacenar las temperaturas de la semana. Esta clase tiene métodos para ingresar temperaturas (ingresar_temperaturas) y calcular el promedio semanal (calcular_promedio).
+init: El constructor de la clase inicializa la lista vacía temperaturas.
+ingresar_temperaturas: Método que pide al usuario ingresar las temperaturas diarias y las guarda en la lista.
+calcular_promedio: Método que calcula el promedio semanal de las temperaturas almacenadas.
+main: Crea una instancia de la clase Clima, solicita las temperaturas y calcula el promedio.
+
+Programación Tradicional: Utiliza funciones independientes para organizar la lógica. Es más directa y fácil de entender para pequeños programas. La lógica se mantiene separada en funciones que hacen tareas específicas.
+Programación Orientada a Objetos (POO): Utiliza una clase para encapsular tanto los datos (temperaturas) como los métodos (funciones) que operan sobre esos datos. Permite una mayor modularidad, extensibilidad y reutilización del código, además de ser más adecuado para sistemas más complejos que pueden beneficiarse de la organización en clases y objetos.
